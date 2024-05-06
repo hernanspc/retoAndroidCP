@@ -7,13 +7,10 @@
     android:layout_width="match_parent"
     tools:context=".activities.LoginActivity">
 
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
 
         <LinearLayout
             android:layout_height="match_parent"
@@ -21,7 +18,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btnIniciarSesion"
+                android:id="@+id/btnEnterAsGuest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -58,8 +55,6 @@
                     android:text="Sign in with Google"
                     android:textSize="18sp" />
             </LinearLayout>
-
-            <!-- Agrega tus otros elementos aquí -->
 
         </LinearLayout>
 
