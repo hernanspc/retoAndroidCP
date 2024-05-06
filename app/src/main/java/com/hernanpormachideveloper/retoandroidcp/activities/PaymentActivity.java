@@ -17,6 +17,6 @@ public class PaymentActivity extends AppCompatActivity {
         double totalPrice = getIntent().getDoubleExtra("totalPrice", 0.0);
 
         TextView totalPriceTextView = findViewById(R.id.txtTotalPrice);
-        totalPriceTextView.setText(String.valueOf(totalPrice));
+        totalPriceTextView.setText("Total a pagar:  S/. "+String.valueOf(String.format("%.2f", totalPrice)));
     }
 }

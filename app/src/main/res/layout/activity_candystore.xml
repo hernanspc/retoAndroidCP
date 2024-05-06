@@ -20,6 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
         android:text="Total: $0.00"
+        android:marginTop="40dp"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
