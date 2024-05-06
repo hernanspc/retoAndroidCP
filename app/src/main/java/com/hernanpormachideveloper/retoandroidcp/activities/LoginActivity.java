@@ -12,16 +12,16 @@
 
     public class LoginActivity extends AppCompatActivity {
 
-        private Button btnGoToAsGuest;
+        private Button btnGoToCandystoreAsGuest;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
 
-            btnGoToAsGuest = findViewById(R.id.btnEnterAsGuest);
+            btnGoToCandystoreAsGuest = findViewById(R.id.btnEnterAsGuest);
 
-            btnGoToAsGuest.setOnClickListener(new View.OnClickListener() {
+            btnGoToCandystoreAsGuest.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                      Intent intent = new Intent(LoginActivity.this, CandystoreActivity.class);
