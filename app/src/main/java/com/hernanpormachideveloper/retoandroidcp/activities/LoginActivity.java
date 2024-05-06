@@ -3,6 +3,7 @@
     import androidx.annotation.NonNull;
     import androidx.appcompat.app.AppCompatActivity;
 
+    import android.app.AlertDialog;
     import android.content.Intent;
     import android.os.Bundle;
 
@@ -23,6 +24,8 @@
     import android.widget.LinearLayout;
     import android.widget.Toast;
 
+    import dmax.dialog.SpotsDialog;
+
     public class LoginActivity extends AppCompatActivity {
 
         private Button btnGoToCandystoreAsGuest;
@@ -32,11 +35,18 @@
         private GoogleSignInClient mGoogleSignInClient;
         LinearLayout signInWithGoogle;
         AuthProvider mAuthProvider;
+        AlertDialog mDialog;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
+
+            mDialog = new SpotsDialog.Builder()
+                    .setContext(this)
+                    .setMessage("Espere un momento")
+                    .setCancelable(false)
+                    .build();
 
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(getString(R.string.default_web_client_id))
@@ -84,7 +94,7 @@
 
         // [START auth_with_google]
         private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-           // mDialog.show();
+           mDialog.show();
             mAuthProvider.googleLogin(acct).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -98,7 +108,7 @@
                         Intent intent = new Intent(LoginActivity.this, CandystoreActivity.class);
                         startActivity(intent);
                     } else {
-                  //      mDialog.dismiss();
+                        mDialog.dismiss();
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
                         Toast.makeText(LoginActivity.this, "No se pudo iniciar sesion con Google ", Toast.LENGTH_SHORT).show();
                     }
