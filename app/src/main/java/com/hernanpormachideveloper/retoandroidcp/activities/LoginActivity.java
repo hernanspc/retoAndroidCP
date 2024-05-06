@@ -101,9 +101,9 @@
 
                     if (task.isSuccessful()) {
                         String name = mAuthProvider.getUsername();
-                        System.out.println("-------------- | ----------------");
+                        System.out.println("-------------- *** ----------------");
                         System.out.println("name "+name);
-                        System.out.println("-------------- | ----------------");
+                        System.out.println("-------------- *** ---------------");
 
                         Intent intent = new Intent(LoginActivity.this, CandystoreActivity.class);
                         startActivity(intent);
