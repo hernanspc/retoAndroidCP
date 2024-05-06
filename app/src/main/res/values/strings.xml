@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">retoAndroidCP</string>
+    <string name="default_web_client_id" translatable="false" >849382967067-bp4gveb9phc0460f70i7estr13ub68ii.apps.googleusercontent.com</string>
 </resources>
