@@ -20,61 +20,6 @@
             android:layout_width="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/coordinatorLayoutTextUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginRight="30dp"
-                android:background="@color/white"
-                android:backgroundTintMode="add"
-                android:foregroundTint="#DD1E1E"
-                android:gravity="center"
-                android:hapticFeedbackEnabled="true"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:endIconTint="@color/colorAccent"
-                    app:hintTextColor="@color/tooltipTextColor">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:hint="N° de Socio CP"
-                        android:inputType="text" />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintTextColor="@color/tooltipTextColor">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:hint="Contraseña"
-                        android:inputType="textPassword" />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-
             <Button
                 android:id="@+id/btnIniciarSesion"
                 android:layout_width="match_parent"
@@ -85,7 +30,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:hapticFeedbackEnabled="true"
                 android:background="@drawable/rounded_button"
-                android:text="Ingresar"
+                android:text="Ingresar como invitado"
                 app:rippleColor="@color/colorAccent" />
 
             <LinearLayout
