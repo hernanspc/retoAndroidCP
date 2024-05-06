@@ -1,12 +1,15 @@
 package com.hernanpormachideveloper.retoandroidcp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.hernanpormachideveloper.retoandroidcp.R;
+import com.hernanpormachideveloper.retoandroidcp.activities.LoginActivity;
 import com.hernanpormachideveloper.retoandroidcp.models.SliderItem;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 import com.squareup.picasso.Picasso;
@@ -38,11 +41,15 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
         if (sliderItem.getImage()!=null){
             if (!sliderItem.getImage().isEmpty()) {
-                System.out.println("|HPORMACHI| ****W "+sliderItem.getImage());
-                System.out.println("|HPORMACHI| getDescription ****W "+sliderItem.getDescription());
-
-
-                 Picasso.with(context).load(sliderItem.getImage()).into(viewHolder.imageViewSlider);
+                Picasso.with(context).load(sliderItem.getImage()).into(viewHolder.imageViewSlider);
+                viewHolder.textViewDescription.setText(sliderItem.getDescription());
+                viewHolder.imageViewSlider.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                         Intent intent = new Intent(context, LoginActivity.class);
+                        context.startActivity(intent);
+                    }
+                });
             }
         }
 
@@ -50,18 +57,19 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
     @Override
     public int getCount() {
-        //slider view count could be dynamic size
         return mSliderItems.size();
     }
 
     class SliderAdapterVH extends SliderViewAdapter.ViewHolder {
 
+        TextView textViewDescription;
         View itemView;
         ImageView imageViewSlider;
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
             imageViewSlider = itemView.findViewById(R.id.imageViewSlider);
+            textViewDescription = itemView.findViewById(R.id.textViewDescription);
 
             this.itemView = itemView;
         }
