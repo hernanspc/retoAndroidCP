@@ -8,7 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btnGoToPaymentPage"
+        android:divider="@android:drawable/divider_horizontal_bright"
+        android:dividerHeight="10dp"
         android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/tvTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnGoToPaymentPage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Total: $0.00"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnGoToPaymentPage"

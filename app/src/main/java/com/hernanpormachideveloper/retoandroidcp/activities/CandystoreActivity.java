@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hernanpormachideveloper.retoandroidcp.R;
@@ -33,6 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CandystoreActivity extends AppCompatActivity {
 
     private Button btnGoToPaymentPage;
+    private TextView txtTvTotalPrice;
     private ApiService apiService;
     private RecyclerView recyclerView;
     private List<CandyItem> candyItems;
@@ -53,6 +55,8 @@ public class CandystoreActivity extends AppCompatActivity {
         callApiCandystore();
 
         recyclerView = findViewById(R.id.recyclerView);
+        txtTvTotalPrice = findViewById(R.id.tvTotalPrice);
+
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -83,7 +87,8 @@ public class CandystoreActivity extends AppCompatActivity {
     }
 
     private void updateTotalPrice() {
-        btnGoToPaymentPage.setText(String.valueOf(totalPrice));
+        txtTvTotalPrice.setText("Total: S/." + String.format("%.2f", totalPrice));
+
     }
 
     private void callApiCandystore() {
